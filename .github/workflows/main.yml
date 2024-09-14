@@ -30,7 +30,7 @@ jobs:
         run: echo "VERSION=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Build and push backend image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/pern-backend:${{ env.VERSION }} -t ${{ secrets.DOCKER_USERNAME }}/pern-backend:${{ env.VERSION }} /thread-be/ThreadsBe
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/pern-backend:${{ env.VERSION }} -t ${{ secrets.DOCKER_USERNAME }}/pern-backend:${{ env.VERSION }} ./thread-be/ThreadsBe
           docker push ${{ secrets.DOCKER_USERNAME }}/pern-backend:${{ env.VERSION }}
 
 
